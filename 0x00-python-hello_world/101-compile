@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+
+import os
+import py_compile
+
+pyfile = os.environ.get('PYFILE')
+
+if not pyfile:
+    print("Error: Environment variable $PYFILE is not set.")
+    exit(1)
+
+if not os.path.isfile(pyfile):
+    print(f"Error: File '{pyfile}' not found.")
+    exit(1)
+
+py_compile.compile(pyfile)
+
+output_filename = pyfile + 'c'
+
+print(f"Compilation successful. Compiled file: {output_filename}")
+
+subprocess.run(["python3", "main.py"])
