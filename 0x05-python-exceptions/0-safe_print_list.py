@@ -5,8 +5,8 @@ def safe_print_list(my_list=[], x=0):
         try:
             print(item, end="")
             element_count += 1
-        except Exception as e:
-            pass
+        except IndexError:
+            print("Index is not available")
         if element_count == x:
             break
     print()
