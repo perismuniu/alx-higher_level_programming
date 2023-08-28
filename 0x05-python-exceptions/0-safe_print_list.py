@@ -6,7 +6,7 @@ def safe_print_list(my_list=[], x=0):
             print(item, end="")
             element_count += 1
         except IndexError:
-            print("Index is not available")
+            break
         if element_count == x:
             break
     print()
