@@ -1,0 +1,65 @@
+# 4-print_square.txt
+
+===============================
+How to Use 2-matrix_divided.py
+===============================
+
+This document explains how the function prints names ``print_square(size)``
+
+Usage
+======
+
+``print_square(size)`` prints a square with the character #.
+
+::
+
+    >>> print_square = __import__('4-print_square').print_square
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+::
+
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+
+function provides no output, as its square with size zero
+
+::
+
+    >>> print_square(0)
+
+
+size erros if not an integer
+============================
+
+Raises a ValueError exception if the size is less than zero
+
+::
+
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+
+Raises a TypeError exception if size is not an integer
+
+::
+
+    >>> print_square("gOOd morning")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Raises TypeError is size is a float and is less than zero
+
+::
+
+    >>> print_square(2.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer

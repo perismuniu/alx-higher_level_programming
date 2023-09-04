@@ -1,0 +1,47 @@
+# 3-say_my_name.txt
+
+===============================
+How to Use 3-say_my_name.py
+===============================
+
+This document explains how the function prints names ``say_my_name(first_name, last_name="")``
+
+Usage
+======
+
+``say_my_name()`` returns all the names provided with both first_name and last_name.
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Mary", "John")
+    My name is Mary John
+
+Function can also print only the first_name and can also print and can also print with an empty last name
+
+::
+ 
+   >>> say_my_name("Margaret")
+   My name is Margaret
+
+::
+
+   >>> say_my_name("Alice", "")
+   My name is Alice
+
+
+Non-string
+========== 
+
+Raises a TypeError if first_name and last_name are non-strings.
+
+::
+   >>> say_my_name(123, "Samson")
+   Traceback (most recent call last):
+   TypeError: first_name must be a string
+
+::
+
+   >>> say_my_name("Marion", 234)
+   Traceback (most recent call last):
+   TypeError: last_name must be a string

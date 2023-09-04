@@ -1,0 +1,54 @@
+# 2-matrix_divided.txt
+
+===============================
+How to Use 2-matrix_divided.py
+===============================
+
+This document defines a matrix division function ``matrix_divided(matrix, div)``
+
+Numbers
+=======
+``matrix_divided()`` returns all the elements of the divided matrix.
+
+
+Function that divides all the numbers in the matrix and returns a matrix that has floats.
+::
+
+   >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+   >>> matrix = [
+   ... [1, 2, 3],
+   ... [4, 5, 6]
+   ... ]
+   >>> print(matrix_divided(matrix, 2))
+   [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+The function also divides the matrix with a floating point.
+
+::
+
+   >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+   >>> matrix = [
+   ... [1, 2, 3],
+   ... [4, 5, 6]
+   ... ]
+   >>> print(matrix_divided(matrix, 2.5))
+   [[0.4, 0.8, 1.2], [1.6, 2.0, 2.4]]
+
+::
+
+
+Non-numbers
+===========
+
+Raises a TypeError is div in not an integer or a float.
+
+::
+
+   >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+   >>> matrix = [
+   ... [1, 2, 3],
+   ... [4, 5, 6]
+   ... ]
+   >>> print(matrix_divided(matrix, "good"))
+   Traceback (most recent call last):
+   TypeError: div must be a number
