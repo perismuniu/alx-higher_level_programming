@@ -1,0 +1,79 @@
+# 5-text_indentation.txt
+
+================================
+How to Use 5-text_indentation.py
+================================
+
+This document defines a text-indentation function ``text_indentation(text)``.
+
+Usage
+====
+
+function that prints a text with 2 new lines after each of these characters: ``.``, ``?`` and ``:``
+
+::
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+    >>> text_indentation("This is a test. Does it work? Yes: it does.")
+    This is a test.
+    <BLANKLINE>
+    Does it work?
+    <BLANKLINE>
+    Yes:
+    <BLANKLINE>
+    it does.
+    <BLANKLINE>
+
+Test with multiple spaces
+
+::
+
+    >>> text_indentation("    This   is   a   test.   Does   it   work?   Yes:   it   does.   ")
+    This   is   a   test.
+    <BLANKLINE>
+    Does   it   work?
+    <BLANKLINE>
+    Yes:
+    <BLANKLINE>
+    it   does.
+    <BLANKLINE>
+
+
+Test with leading spaces
+::
+    
+    >>> text_indentation("    This is a test. Does it work? Yes: it does.")
+    This is a test.
+    <BLANKLINE>
+    Does it work?
+    <BLANKLINE>
+    Yes:
+    <BLANKLINE>
+    it does.
+    <BLANKLINE>
+
+Test with Symbols
+::
+
+    >>> text_indentation("This is a test! Does it work @ Yes: it does.")
+    This is a test! Does it work @ Yes:
+    <BLANKLINE>
+    it does.
+    <BLANKLINE>
+
+
+Test with No Punctuation
+::
+
+    >>> text_indentation("This is a test with no punctuation")
+    This is a test with no punctuation
+
+
+Error handling
+==============
+
+Test with Non-string Input (Error)
+::
+
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    TypeError: text must be a string
