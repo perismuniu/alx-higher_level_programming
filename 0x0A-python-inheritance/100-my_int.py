@@ -3,6 +3,9 @@
 
 
 class MyInt(int):
+    """
+    InvertsMyInt has == and != operators.
+    """
     def __eq__(self, other):
         """
         Override the == operator to invert its behavior.
