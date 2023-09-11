@@ -1,0 +1,36 @@
+# 1-my_list.txt
+
+===========================
+How to use 1-my_list.py
+===========================
+
+Test case 1
+::
+    >>> MyList = __import__('1-my_list').MyList
+    >>> MyList([5, 1, 3, 2, 4])
+    >>> MyList.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Test case 2
+::
+    >>> MyList([])
+    >>> MyList.print_sorted()
+    []
+
+Test case 3 - Single element
+::
+    >>> MyList([42])
+    >>> MyLists.print_sorted()
+    [42]
+
+Test case 4 - duplicate elements
+::
+    >>> MyList([2, 2, 2, 1, 1, 3])
+    >>> MyList.print_sorted()
+    [1, 1, 2, 2, 2, 3]
+
+Test case 4 - duplicate elements
+::
+    >>> MyList([-5, -2, -9, -1, -7])
+    >>> MyList.print_sorted()
+    [-9, -7, -5, -2, -1]
