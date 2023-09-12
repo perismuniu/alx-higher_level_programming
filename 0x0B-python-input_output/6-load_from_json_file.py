@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""Defines function that writes an object to a text file using JSON"""
+"""Defines function that creates an Object from a "JSON file" """
 import json
 
 
-def save_to_json_file(my_obj, filename):
+def load_from_json_file(filename):
     """
-    Serialize and save an object to a JSON file.
+    Load data from a JSON file and return it as a Python object.
 
-    :param my_obj: The object to be serialized and saved.
-    :type my_obj: object
-    :param filename: The name of the file to which the object will be saved.
+    :param filename: The name of the JSON file to load.
     :type filename: str
+    :return: The loaded Python object, or None if there was an error.
+    :rtype: object
     """
-    with open(filename, 'w') as json_file:
-        json.dump(my_obj, json_file)
+    with open(filename) as json_file:
+        return json.load(json_file)
