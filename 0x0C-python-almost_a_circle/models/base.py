@@ -3,6 +3,7 @@
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -43,7 +44,7 @@ class Base:
         if not list_dictionaries:
             return "[]"
         else:
-            return json.dumps(list_dictionaries)
+            return json.dumps(list_dictionaries, indent=4)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -165,19 +166,19 @@ class Base:
                 for row in reader:
                     if cls.__name__ == "Rectangle":
                         dictionary = {
-                            "id": int(row[0]),
-                            "width": int(row[1]),
-                            "height": int(row[2]),
-                            "x": int(row[3]),
-                            "y": int(row[4])
-                        }
+                                "id": int(row[0]),
+                                "width": int(row[1]),
+                                "height": int(row[2]),
+                                "x": int(row[3]),
+                                "y": int(row[4])
+                                }
                     elif cls.__name__ == "Square":
                         dictionary = {
-                            "id": int(row[0]),
-                            "size": int(row[1]),
-                            "x": int(row[2]),
-                            "y": int(row[3])
-                        }
+                                "id": int(row[0]),
+                                "size": int(row[1]),
+                                "x": int(row[2]),
+                                "y": int(row[3])
+                                }
                     instances.append(cls.create(**dictionary))
                 return instances
         except FileNotFoundError:
