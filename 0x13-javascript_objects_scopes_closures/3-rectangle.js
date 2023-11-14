@@ -5,9 +5,9 @@ class Rectangle {
       return {};
     }
     this.width = w;
-    this.height = h; 
+    this.height = h;
   }
-  
+
   print () {
     for (let i = 0; i < this.height; i++) {
       let row = '';
