@@ -13,20 +13,12 @@ if __name__ == "__main__":
 
     cursor = db.cursor()
 
-    state_name = sys.argv[4]
+    cursor.execute("""SELECT cities.name FROM
+                   cities INNER JOIN states ON states.id = cities.state_id
+                   WHERE states.name=%s""", (sys.argv[4],))
 
-    query = """SELECT GROUP_CONCAT(cities.name SEPARATOR '. ')
-               FROM cities
-               JOIN states ON states.id = cities.state_id
-               WHERE states.name LIKE %s
-               ORDER BY cities.id"""
-
-    cursor.execute(query, (state_name,))
-
-    results = cursor.fetchone()
-
-    if results:
-        print(results[0])
-
+    results = cursor.fetchall()
+    temp = list(row[0] for row in results)
+    print(*temp, sep=", ")
     cursor.close()
     db.close()
